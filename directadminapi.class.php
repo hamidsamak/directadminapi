@@ -129,20 +129,27 @@ class DirectAdminAPI {
 	}
 
 	/**
-	 * delete domain pointer
-	 * @param  string $domain_name pointed domain name
+	 * delete domain pointer(s)
+	 * @param  string $domain_names pointed domain name(s) [comma separated for multiple names]
 	 * @return boolean
 	 */
-	public function domain_pointer_delete($domain_name) {
+	public function domain_pointer_delete($domain_names) {
 		if ($this->status === false)
 			return false;
 
-		$data = $this->request($this->action('CMD_DOMAIN_POINTER'), array(
+		$domain_names = explode(',', $domain_names);
+		$domain_names = array_map('trim', $domain_names);
+
+		$request_array = array(
 			'domain' => $this->domain,
 			'action' => 'delete',
 			'delete' => 'Delete',
-			'select0' => $domain_name
-		));
+		);
+
+		foreach ($domain_names as $key => $domain_name)
+			$request_array['select' . $key] = $domain_name;
+
+		$data = $this->request($this->action('CMD_DOMAIN_POINTER'), $request_array);
 
 		if ($data !== false) {
 			$this->response_text = $data;
