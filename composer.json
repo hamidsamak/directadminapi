@@ -1,0 +1,19 @@
+{
+	"name": "hamidsamak/directadminapi",
+	"type": "library",
+	"description": "",
+	"keywords": ["direct admin", "control panel", "api", "domain pointer"],
+	"homepage": "https://github.com/hamidsamak/directadminapi",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Hamid Samak",
+			"email": "me@hamidsamak.ir",
+			"homepage": "http://hamidsamak.ir",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	}
+}
