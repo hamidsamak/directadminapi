@@ -159,6 +159,29 @@ class DirectAdminAPI {
 
 		return false;
 	}
+
+	/**
+	 * put contents to file
+	 * @param  string $file_path full path of new or existing file
+	 * @param  string $contents       text contents
+	 * @return boolean
+	 */
+	public function file_put($file_path, $contents = null) {
+		$data = $this->request($this->action('CMD_FILE_MANAGER'), array(
+			'action' => 'edit',
+			'path' => dirname($file_path),
+			'filename' => basename($file_path),
+			'text' => $contents,
+		));
+
+		if ($data !== false) {
+			$this->response_text = $data;
+
+			return true;
+		}
+
+		return false;
+	}
 }
 
 ?>
