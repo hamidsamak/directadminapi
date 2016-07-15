@@ -182,6 +182,20 @@ class DirectAdminAPI {
 
 		return false;
 	}
+
+	/**
+	 * get file contents
+	 * @param  string $file_path full path of existing file
+	 * @return boolean
+	 */
+	public function file_get($file_path) {
+		$data = $this->request($this->action('CMD_FILE_MANAGER' . $file_path));
+
+		if ($data !== false)
+			return $data;
+
+		return false;
+	}
 }
 
 ?>
