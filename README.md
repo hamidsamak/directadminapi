@@ -9,4 +9,4 @@ It can easily extended to what you need, currently I have added only some method
 2. `domain_pointer_add` (single domain)
 3. `domain_pointer_delete` (single and multiple with comma separated domain names)
 4. `file_put` (create new file or update existing file)
-5. `file_get` (get contents or existing file)
+5. `file_get` (get contents of existing file)
