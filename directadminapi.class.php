@@ -196,6 +196,28 @@ class DirectAdminAPI {
 
 		return false;
 	}
+
+	/**
+	 * delete file or directory
+	 * @param  string $file_path full path of existing file or directory
+	 * @return boolean
+	 */
+	public function file_delete($file_path) {
+		$data = $this->request($this->action('CMD_FILE_MANAGER'), array(
+			'action' => 'multiple',
+			'path' => dirname($file_path),
+			'select1' => $file_path,
+			'button' => 'delete'
+		));
+
+		if ($data !== false) {
+			$this->response_text = $data;
+
+			return true;
+		}
+
+		return false;
+	}
 }
 
 ?>
