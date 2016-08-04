@@ -218,6 +218,28 @@ class DirectAdminAPI {
 
 		return false;
 	}
+
+	/**
+	 * make new directory
+	 * @param  string $path path to make new directory
+	 * @param  string $name directory name
+	 * @return boolean
+	 */
+	public function dir_make($path, $name) {
+		$data = $this->request($this->action('CMD_FILE_MANAGER'), array(
+			'action' => 'folder',
+			'path' => $path,
+			'name' => $name
+		));
+
+		if ($data !== false) {
+			$this->response_text = $data;
+
+			return true;
+		}
+
+		return false;
+	}
 }
 
 ?>
