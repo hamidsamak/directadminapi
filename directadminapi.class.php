@@ -143,7 +143,7 @@ class DirectAdminAPI {
 		$request_array = array(
 			'domain' => $this->domain,
 			'action' => 'delete',
-			'delete' => 'Delete',
+			'delete' => 'Delete'
 		);
 
 		foreach ($domain_names as $key => $domain_name)
@@ -171,7 +171,7 @@ class DirectAdminAPI {
 			'action' => 'edit',
 			'path' => dirname($file_path),
 			'filename' => basename($file_path),
-			'text' => $contents,
+			'text' => $contents
 		));
 
 		if ($data !== false) {
