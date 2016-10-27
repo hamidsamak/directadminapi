@@ -10,3 +10,5 @@ It can easily extended to what you need, currently I have added only some method
 3. `domain_pointer_delete` (single and multiple with comma separated domain names)
 4. `file_put` (create new file or update existing file)
 5. `file_get` (get contents of existing file)
+6. `web_usage_log` (get usage log)
+7. `web_error_log` (get error log)
