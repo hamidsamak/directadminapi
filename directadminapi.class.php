@@ -254,6 +254,20 @@ class DirectAdminAPI {
 
 		return false;
 	}
+
+	/**
+	 * get error log
+	 * @param  integer $lines number of logs
+	 * @return string
+	 */
+	public function web_error_log($lines = 0) {
+		$data = $this->request($this->action('CMD_SHOW_LOG') . '?domain=' . $this->domain . '&type=error' . ($lines > 0 ? '&lines=' . $lines : null));
+
+		if ($data !== false)
+			return $data;
+
+		return false;
+	}
 }
 
 ?>
