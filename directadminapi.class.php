@@ -62,6 +62,7 @@ class DirectAdminAPI {
 		curl_setopt($ch, CURLOPT_COOKIEJAR, $this->cookie_file_path);
 		curl_setopt($ch, CURLOPT_COOKIEFILE, $this->cookie_file_path);
 		curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+		curl_setopt($ch, CURLOPT_REFERER, substr($this->action(), 0, -1) . ':' . $this->port);
 
 		return curl_exec($ch);
 	}
