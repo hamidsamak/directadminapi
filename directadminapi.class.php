@@ -3,9 +3,10 @@
 /**
  * DirectAdmin API using cURL
  * 
- * @author Hamid Samak <hamid@limny.org>
- * @copyright 2016 Hamid Samak
+ * @author Hamid Samak <me@hamidsamak.ir>
+ * @copyright 2017 Hamid Samak
  * @license MIT License
+ * @link https://github.com/hamidsamak/directadminapi
  */
 
 class DirectAdminAPI {
